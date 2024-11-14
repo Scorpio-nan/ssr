@@ -1,3 +1,13 @@
+## [6.2.161](https://github.com/zhangyuang/ssr/compare/utils@6.2.160...utils@6.2.161) (2024-11-14)
+
+
+### Features
+
+* adjust history order ([67ea802](https://github.com/zhangyuang/ssr/commit/67ea80211140cb4aa018d04789c0cc006e39e438))
+* use micro plugin in dev ([671ba69](https://github.com/zhangyuang/ssr/commit/671ba695747a00297d640869dcf9d3437944dd58))
+
+
+
 ## [6.2.160](https://github.com/zhangyuang/ssr/compare/utils@6.2.159...utils@6.2.160) (2024-10-24)
 
 

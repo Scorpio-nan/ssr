@@ -1,3 +1,18 @@
+## [6.2.65](https://github.com/zhangyuang/ssr/compare/types@6.2.64...types@6.2.65) (2024-11-14)
+
+
+### Bug Fixes
+
+* compile error ([6be2a8f](https://github.com/zhangyuang/ssr/commit/6be2a8ffb65edd91ad8bc9b0ef66a338a8de4218))
+
+
+### Features
+
+* adjust history order ([67ea802](https://github.com/zhangyuang/ssr/commit/67ea80211140cb4aa018d04789c0cc006e39e438))
+* use micro plugin in dev ([671ba69](https://github.com/zhangyuang/ssr/commit/671ba695747a00297d640869dcf9d3437944dd58))
+
+
+
 ## [6.2.64](https://github.com/zhangyuang/ssr/compare/types@6.2.62...types@6.2.64) (2024-10-23)
 
 
