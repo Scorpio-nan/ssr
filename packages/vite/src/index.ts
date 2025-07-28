@@ -1,11 +1,11 @@
-import type * as VuePlugin from '@vitejs/plugin-vue'
-import type * as VueJSXPlugin from '@vitejs/plugin-vue-jsx'
-import type * as ReactPlugin from '@vitejs/plugin-react'
+import type * as VuePlugin from '@vitejs/plugin-vue/dist'
+import type * as VueJSXPlugin from '@vitejs/plugin-vue-jsx/dist'
+import type * as ReactPlugin from '@vitejs/plugin-react/dist'
 import { resolve } from 'path'
 import babel from '@rollup/plugin-babel'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { getCwd, getDefineEnv, getOutputPublicPath, loadConfig, loadModuleFromFramework, judgeFramework, accessFileSync, getBuildEntry, isReact18 } from 'ssr-common-utils'
-import { UserConfig, build as viteBuild, PluginOption } from 'vite'
+import { build as viteBuild, PluginOption, InlineConfig } from 'vite'
 
 import { AndDesignVueResolve, AntdResolve, ElementPlusResolve, NutuiResolve, VantResolve, createStyleImportPlugin } from 'ssr-vite-plugin-style-import'
 import { getBabelOptions } from './babel'
@@ -72,7 +72,7 @@ const serverPlugins: PluginOption[] = [...ssrResolvePlugin({}), ...frameworkServ
 
 const { server: serverEntry, client: clientEntry } = getBuildEntry()
 
-export const serverConfig: UserConfig = {
+export const serverConfig: InlineConfig = {
 	...commonConfig(),
 	...viteConfig?.().server?.otherConfig,
 	plugins: viteConfig?.()?.server?.processPlugin?.(serverPlugins) ?? serverPlugins,
@@ -129,7 +129,7 @@ if (isVue3) {
 
 const clientPlugins: PluginOption[] = [...frameworkClientPlugins, ...commonClientPlugins]
 const analyzePlugin = process.env.GENERATE_ANALYSIS ? visualizer({ filename: resolve(getCwd(), './build/stat.html'), open: true }) : null
-export const clientConfig: UserConfig = {
+export const clientConfig: InlineConfig = {
 	...commonConfig(),
 	...viteConfig?.().client?.otherConfig,
 	base: isDev ? '/' : getOutputPublicPath(),

@@ -72,7 +72,7 @@ async function viteRender(ctx: ISSRContext, config: IConfig) {
 	if (isDev) {
 		const { createServer } = await import('vite')
 		const { serverConfig } = await import('ssr-vite')
-		viteServer = !viteServer ? await createServer(serverConfig) : viteServer
+		viteServer = !viteServer ? await createServer(serverConfig as any) : viteServer
 		const { serverRender } = await (viteServer as ViteDevServer).ssrLoadModule(viteServerEntry)
 		serverRes = await serverRender(ctx, config)
 	} else {
