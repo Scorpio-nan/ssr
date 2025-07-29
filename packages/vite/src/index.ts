@@ -4,8 +4,8 @@ import type * as ReactPlugin from '@vitejs/plugin-react/dist'
 import { resolve } from 'path'
 import babel from '@rollup/plugin-babel'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { getCwd, getDefineEnv, getOutputPublicPath, loadConfig, loadModuleFromFramework, judgeFramework, accessFileSync, getBuildEntry, isReact18 } from 'ssr-common-utils'
-import { build as viteBuild, PluginOption, InlineConfig } from 'vite'
+import { getCwd, getDefineEnv, getOutputPublicPath, loadConfig, defaultExternal, loadModuleFromFramework, judgeFramework, accessFileSync, getBuildEntry, isReact18 } from 'ssr-common-utils'
+import { build as viteBuild, type PluginOption, type InlineConfig } from 'vite'
 
 import { AndDesignVueResolve, AntdResolve, ElementPlusResolve, NutuiResolve, VantResolve, createStyleImportPlugin } from 'ssr-vite-plugin-style-import'
 import { getBabelOptions } from './babel'
@@ -18,7 +18,7 @@ const hasReactIs = accessFileSync(resolve(getCwd(), './node_modules/react-is'))
 const extraInclude = [''].concat(isReact ? ['react', 'ssr-deepclone', 'valtio', isReact18() ? 'react-dom/client' : 'react-dom', 'react-router', 'react-router-dom', hasReactIs ? 'react-is' : ''] : []).filter(Boolean)
 const extraExclude = ['ssr-hoc-react', 'ssr-common-utils']
 
-const { getOutput, viteConfig, supportOptinalChaining, isDev, define, optimize, babelOptions, chunkName } = loadConfig()
+const { getOutput, viteConfig, supportOptinalChaining, isDev, define, optimize, babelOptions, chunkName, whiteList } = loadConfig()
 const { clientOutPut, serverOutPut } = getOutput()
 
 let vuePlugin: typeof VuePlugin.default | undefined
@@ -73,23 +73,14 @@ const serverPlugins: PluginOption[] = [...ssrResolvePlugin({}), ...frameworkServ
 const { server: serverEntry, client: clientEntry } = getBuildEntry()
 
 export const serverConfig: InlineConfig = {
-	...commonConfig(),
+	...commonConfig('server'),
 	...viteConfig?.().server?.otherConfig,
+	ssr: {
+		external: defaultExternal.concat(viteConfig?.()?.server?.externals ?? []),
+		noExternal: whiteList
+	},
 	plugins: viteConfig?.()?.server?.processPlugin?.(serverPlugins) ?? serverPlugins,
-	esbuild: {
-		...viteConfig?.().server?.otherConfig?.esbuild,
-		keepNames: true,
-		logOverride: { 'this-is-undefined-in-esm': 'silent' }
-	},
-	optimizeDeps: {
-		...viteConfig?.().server?.otherConfig?.optimizeDeps,
-		include: extraInclude.concat(...(viteConfig?.().server?.otherConfig?.optimizeDeps?.include ?? [])),
-		esbuildOptions: {
-			...viteConfig?.().server?.otherConfig?.optimizeDeps?.esbuildOptions,
-			// @ts-expect-error
-			bundle: isDev
-		}
-	},
+
 	build: {
 		minify: !process.env.NOMINIFY,
 		...viteConfig?.().server?.otherConfig?.build,
@@ -130,14 +121,9 @@ if (isVue3) {
 const clientPlugins: PluginOption[] = [...frameworkClientPlugins, ...commonClientPlugins]
 const analyzePlugin = process.env.GENERATE_ANALYSIS ? visualizer({ filename: resolve(getCwd(), './build/stat.html'), open: true }) : null
 export const clientConfig: InlineConfig = {
-	...commonConfig(),
+	...commonConfig('client'),
 	...viteConfig?.().client?.otherConfig,
 	base: isDev ? '/' : getOutputPublicPath(),
-	esbuild: {
-		...viteConfig?.().client?.otherConfig?.esbuild,
-		keepNames: true,
-		logOverride: { 'this-is-undefined-in-esm': 'silent' }
-	},
 	optimizeDeps: {
 		...viteConfig?.().client?.otherConfig?.optimizeDeps,
 		include: extraInclude.concat(...(viteConfig?.().client?.otherConfig?.optimizeDeps?.include ?? [])),

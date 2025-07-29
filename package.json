@@ -92,8 +92,12 @@
       "ssr-plugin-vue3": "workspace:*",
       "ssr-types": "workspace:*",
       "ssr-vite": "workspace:*",
-      "ssr-webpack": "workspace:*"
+      "ssr-webpack": "workspace:*",
+      "@vitejs/plugin-react>vite": "npm:rolldown-vite@latest",
+      "@vitejs/plugin-vue>vite": "npm:rolldown-vite@latest",
+      "@vitejs/plugin-vue-jsx>vite": "npm:rolldown-vite@latest"
     },
+    
     "dedupeInjectedDeps": true,
     "packageExtensions": {
       "vue-server-renderer": {

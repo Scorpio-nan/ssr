@@ -214,6 +214,10 @@ const loadConfig = (): IConfig => {
 	config.assetsDir = assetsDir
 	if (!config.isVite) {
 		alias['valtio'] = join(cwd, './node_modules/valtio')
+	} else if (isDev) {
+		delete alias['react']
+		delete alias['react-dom']
+		delete alias['react-router-dom']
 	}
 	config.alias = alias
 	config.prefix = normalizeStartPath(config.prefix ?? '/')

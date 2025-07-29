@@ -6,8 +6,8 @@ import MagicString from 'magic-string'
 import { mkdir } from 'shelljs'
 import type { Plugin, UserConfig, LogType } from 'vite'
 import type { OutputOptions, PluginContext, PreRenderedChunk, LoadResult } from 'rolldown'
-import { getBuildConfig, defaultExternal } from 'ssr-common-utils'
-import { getDependencies, getPkgName, accessFile, cryptoAsyncChunkName, debounce, getCwd, ssrDebug, loadConfig, logErr, getOutputPublicPath } from 'ssr-common-utils'
+import { getBuildConfig } from 'ssr-common-utils'
+import { getDependencies, getPkgName, accessFile, cryptoAsyncChunkName, debounce, getCwd, ssrDebug, loadConfig, logErr, getOutputPublicPath, defaultExternal } from 'ssr-common-utils'
 
 const webpackCommentRegExp = /webpackChunkName:\s?"(.*)?"\s?\*/
 const chunkNameRe = /chunkName=(.*)/
@@ -304,8 +304,8 @@ const manualChunksFn = (id: string) => {
 	}
 }
 
-const commonConfig = (): UserConfig => {
-	const { whiteList, alias, css, hmr, viteConfig, optimize } = loadConfig()
+const commonConfig = (_env: 'server' | 'client'): UserConfig => {
+	const { whiteList, alias, css, viteConfig, optimize, hmr } = loadConfig()
 	const lessOptions = css?.().loaderOptions?.less?.lessOptions ? css?.().loaderOptions?.less?.lessOptions : css?.().loaderOptions?.less
 	return {
 		root: cwd,
@@ -316,6 +316,7 @@ const commonConfig = (): UserConfig => {
 			hmr,
 			...viteConfig?.().common?.server
 		},
+		appType: 'custom',
 		css: {
 			postcss: css?.().loaderOptions?.postcss ?? {},
 			preprocessorOptions: {
