@@ -168,7 +168,7 @@ const asyncOptimizeChunkPlugin = (): Plugin => {
 			// after the first layer file can be located in which chunkName
 			// confirm all children dependence belong to which chunkName
 			Object.keys(dependenciesMap).forEach((item) => {
-				const id = !isAbsolute(item) ? filePathMap[item] : item
+				const id = !isAbsolute(item) && filePathMap[item] ? filePathMap[item] : item
 				findChildren(id, this.getModuleInfo)
 			})
 			Object.keys(dependenciesMap).forEach((item) => {

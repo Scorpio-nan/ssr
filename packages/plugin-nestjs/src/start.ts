@@ -10,7 +10,6 @@ const singleDash = ['c', 'p', 'w', 'd', 'e', 'h'].concat(morethan ? 'b' : '')
 const doubleDash = ['config', 'path', 'watch', 'watchAssets', 'debug', 'webpack', 'webpackPath', 'tsc', 'exec', 'preserveWatchOutput', 'help'].concat(morethan ? 'builder' : '')
 
 const start = async (argv: Argv) => {
-	console.log('nest start')
 	const cwd = getCwd()
 	const { serverPort, nestStartTips } = loadConfig()
 	spinner.start()
