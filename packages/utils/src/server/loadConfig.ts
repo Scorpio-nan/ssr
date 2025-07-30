@@ -40,12 +40,7 @@ const loadConfig = (): IConfig => {
 				},
 		userConfig.alias
 	)
-	if (isReact18()) {
-		alias['react-dom/client'] = join(cwd, './node_modules/react-dom/client')
-	}
-	if (framework === 'ssr-plugin-vue3') {
-		alias['@vue/server-renderer'] = '@vue/server-renderer/index.js'
-	}
+
 	type ClientLogLevel = 'error'
 	const publicPath = userConfig.publicPath?.startsWith('http') ? userConfig.publicPath : normalizeStartPath(userConfig.publicPath ?? '/')
 
@@ -212,12 +207,19 @@ const loadConfig = (): IConfig => {
 		serverOutPut: join(cwd, './build/server')
 	})
 	config.assetsDir = assetsDir
+	if (isReact18()) {
+		alias['react-dom/client'] = join(cwd, './node_modules/react-dom/client')
+	}
+	if (framework === 'ssr-plugin-vue3') {
+		alias['@vue/server-renderer'] = '@vue/server-renderer/index.js'
+	}
 	if (!config.isVite) {
 		alias['valtio'] = join(cwd, './node_modules/valtio')
-	} else if (isDev) {
+	} else {
 		delete alias['react']
 		delete alias['react-dom']
 		delete alias['react-router-dom']
+		delete alias['react-dom/client']
 	}
 	config.alias = alias
 	config.prefix = normalizeStartPath(config.prefix ?? '/')

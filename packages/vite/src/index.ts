@@ -1,6 +1,7 @@
 import type * as VuePlugin from '@vitejs/plugin-vue/dist'
 import type * as VueJSXPlugin from '@vitejs/plugin-vue-jsx/dist'
-import type * as ReactPlugin from '@vitejs/plugin-react-oxc'
+// import type * as ReactPlugin from '@vitejs/plugin-react-oxc'
+import type * as ReactPlugin from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import babel from '@rollup/plugin-babel'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -30,7 +31,7 @@ if (isVue3) {
 	vueJSXPlugin = require(loadModuleFromFramework('@vitejs/plugin-vue-jsx'))
 }
 if (isReact) {
-	reactPlugin = require(loadModuleFromFramework('@vitejs/plugin-react-oxc')).default
+	reactPlugin = require(loadModuleFromFramework('@vitejs/plugin-react'))
 }
 const styleImportConfig = {
 	include: ['**/*.vue', '**/*.ts', '**/*.js', '**/*.tsx', '**/*.jsx', /chunkName/],
@@ -57,7 +58,9 @@ if (isVue3) {
 } else if (isReact) {
 	frameworkServerPlugins = frameworkServerPlugins.concat(
 		reactPlugin!({
-			...viteConfig?.()?.server?.defaultPluginOptions
+			...viteConfig?.()?.server?.defaultPluginOptions,
+			jsxRuntime: 'automatic',
+			...babelOptions
 		})
 	)
 }
@@ -74,7 +77,6 @@ export const serverConfig: InlineConfig = {
 		noExternal: whiteList
 	},
 	plugins: viteConfig?.()?.server?.processPlugin?.(serverPlugins) ?? serverPlugins,
-
 	build: {
 		minify: !process.env.NOMINIFY,
 		...viteConfig?.().server?.otherConfig?.build,
