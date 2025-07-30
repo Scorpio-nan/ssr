@@ -31,7 +31,7 @@
   "homepage": "https://github.com/zhangyuang/ssr#readme",
   "dependencies": {
     "ssr-common-utils": "workspace:*",
-    "@vitejs/plugin-react": "^4.0.0",
+    "@vitejs/plugin-react-oxc": "^0.3.0",
     "babel-preset-react-app": "^10.0.0",
     "ssr-hoc-react": "workspace:*",
     "react-refresh": "^0.12.0",

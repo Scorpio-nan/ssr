@@ -1,6 +1,6 @@
 import type * as VuePlugin from '@vitejs/plugin-vue/dist'
 import type * as VueJSXPlugin from '@vitejs/plugin-vue-jsx/dist'
-import type * as ReactPlugin from '@vitejs/plugin-react/dist'
+import type * as ReactPlugin from '@vitejs/plugin-react-oxc'
 import { resolve } from 'path'
 import babel from '@rollup/plugin-babel'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -30,9 +30,8 @@ if (isVue3) {
 	vueJSXPlugin = require(loadModuleFromFramework('@vitejs/plugin-vue-jsx'))
 }
 if (isReact) {
-	reactPlugin = require(loadModuleFromFramework('@vitejs/plugin-react'))
+	reactPlugin = require(loadModuleFromFramework('@vitejs/plugin-react-oxc')).default
 }
-
 const styleImportConfig = {
 	include: ['**/*.vue', '**/*.ts', '**/*.js', '**/*.tsx', '**/*.jsx', /chunkName/],
 	resolves: [AndDesignVueResolve(), VantResolve(), ElementPlusResolve(), NutuiResolve(), AntdResolve()]
@@ -58,12 +57,7 @@ if (isVue3) {
 } else if (isReact) {
 	frameworkServerPlugins = frameworkServerPlugins.concat(
 		reactPlugin!({
-			...viteConfig?.()?.server?.defaultPluginOptions,
-			jsxRuntime: 'automatic',
-			babel: {
-				...babelOptions,
-				plugins: [...(babelOptions?.plugins ?? []), ...(!supportOptinalChaining ? ['@babel/plugin-proposal-optional-chaining', '@babel/plugin-proposal-nullish-coalescing-operator'] : [])]
-			}
+			...viteConfig?.()?.server?.defaultPluginOptions
 		})
 	)
 }

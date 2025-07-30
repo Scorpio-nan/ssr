@@ -2,8 +2,7 @@ import { SProps } from 'ssr-types'
 import Rectangle from '@/components/rectangle'
 import Search from '@/components/search'
 import { IData } from '~/typings/data'
-import { useStore, useCtx } from 'ssr-common-utils'
-console.log(useCtx())
+import { useStore } from 'ssr-common-utils'
 export default function Index(props: SProps) {
 	const { indexState: state } = useStore<{ indexState: IData }>()
 	return (
