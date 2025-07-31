@@ -12,7 +12,6 @@
     "reflect-metadata": "^0.1.13",
     "ssr-common-utils": "^7.0.0",
     "ssr-core": "^7.0.0",
-    "swiper": "6.7.5",
     "valtio": "^1.13.2"
   },
   "devDependencies": {
