@@ -18,7 +18,7 @@
 import { useRouter } from 'vue-router'
 import { ItemMapArr } from '~/typings/data'
 import 'swiper/swiper-bundle.css'
-import { Swiper, SwiperSlide } from 'swiper/swiper-vue.cjs.js'
+import { Swiper, SwiperSlide } from 'swiper/swiper-vue.esm.js'
 import { Swiper as SwiperCore, Autoplay, Pagination } from 'swiper'
 import 'swiper/components/pagination/pagination.less'
 const Router = useRouter()
