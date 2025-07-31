@@ -7,7 +7,7 @@ import { mkdir } from 'shelljs'
 import type { Plugin, UserConfig, LogType } from 'vite'
 import type { OutputOptions, PluginContext, PreRenderedChunk, LoadResult } from 'rolldown'
 import { getBuildConfig } from 'ssr-common-utils'
-import { getDependencies, getPkgName, accessFile, cryptoAsyncChunkName, debounce, getCwd, ssrDebug, loadConfig, logErr, getOutputPublicPath, defaultExternal } from 'ssr-common-utils'
+import { getDependencies, getPkgName, accessFile, cryptoAsyncChunkName, debounce, getCwd, ssrDebug, loadConfig, logErr, getOutputPublicPath, defaultExternal, judgeFramework } from 'ssr-common-utils'
 
 const webpackCommentRegExp = /webpackChunkName:\s?"(.*)?"\s?\*/
 const chunkNameRe = /chunkName=(.*)/
@@ -306,6 +306,7 @@ const manualChunksFn = (id: string) => {
 
 const commonConfig = (_env: 'server' | 'client'): UserConfig => {
 	const { whiteList, alias, css, viteConfig, optimize, hmr } = loadConfig()
+	const framework = judgeFramework()
 	const lessOptions = css?.().loaderOptions?.less?.lessOptions ? css?.().loaderOptions?.less?.lessOptions : css?.().loaderOptions?.less
 	return {
 		root: cwd,
@@ -332,7 +333,14 @@ const commonConfig = (_env: 'server' | 'client'): UserConfig => {
 			noExternal: whiteList
 		},
 		resolve: {
-			alias: alias,
+			alias: {
+				...alias,
+				...(_env === 'client' && framework === 'ssr-plugin-react'
+					? {
+							valtio: resolve(cwd, './node_modules/valtio')
+						}
+					: {})
+			},
 			extensions: ['.mjs', '.ts', '.jsx', '.tsx', '.json', '.vue', '.js']
 		}
 	}

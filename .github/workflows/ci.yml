@@ -118,8 +118,7 @@ jobs:
           start: pnpm example:midway:react
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/common-ssr.spec.js
-            e2e/integration/examples/react-ssr.spec.js
+            e2e/integration/examples/noswiper.spec.js
           browser: chrome
 
   e2e-chrome-nestjs-react-prod:
@@ -167,8 +166,7 @@ jobs:
           start: pnpm example:nestjs:react:prod
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/common-ssr.spec.js
-            e2e/integration/examples/react-ssr.spec.js
+            e2e/integration/examples/noswiper.spec.js
           browser: chrome
 
 
@@ -621,7 +619,7 @@ jobs:
           start: pnpm example:midway:react:vite
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/common-ssr.spec.js
+            e2e/integration/examples/noswiper.spec.js
           browser: chrome
   e2e-chrome-midway-vue3-vite:
     if: ${{ !contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, '.md')}}

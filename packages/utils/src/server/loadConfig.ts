@@ -210,13 +210,13 @@ const loadConfig = (): IConfig => {
 			alias['@vue/server-renderer'] = '@vue/server-renderer/index.js'
 		}
 	}
-	if (!config.isVite) {
-		alias['valtio'] = join(cwd, './node_modules/valtio')
-	} else {
+	if (config.isVite) {
 		delete alias['react']
 		delete alias['react-dom']
 		delete alias['react-router-dom']
 		delete alias['react-dom/client']
+	} else {
+		alias['valtio'] = join(cwd, './node_modules/valtio')
 	}
 	config.alias = alias
 	config.prefix = normalizeStartPath(config.prefix ?? '/')
