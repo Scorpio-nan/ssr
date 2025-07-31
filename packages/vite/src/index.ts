@@ -78,7 +78,7 @@ export const serverConfig: InlineConfig = {
 	},
 	plugins: viteConfig?.()?.server?.processPlugin?.(serverPlugins) ?? serverPlugins,
 	build: {
-		minify: !process.env.NOMINIFY,
+		minify: false,
 		...viteConfig?.().server?.otherConfig?.build,
 		ssr: serverEntry,
 		outDir: serverOutPut,
