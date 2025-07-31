@@ -219,7 +219,7 @@ jobs:
           start: pnpm example:nestjs:react18:prod
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/react18-ssr.spec.js
+            e2e/integration/examples/noswiper-ssr.spec.js
           browser: chrome
 
   e2e-chrome-nestjs-react-prod-vite:
@@ -323,7 +323,7 @@ jobs:
           start: pnpm example:nestjs:react18:prod:vite
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/react18-ssr.spec.js
+            e2e/integration/examples/noswiper-ssr.spec.js
           browser: chrome
   e2e-chrome-nestjs-vue3-prod-vite:
     if: ${{ !contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, '.md')}}
@@ -722,7 +722,7 @@ jobs:
           start: pnpm example:nestjs:react18:vite
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/react18-ssr.spec.js
+            e2e/integration/examples/noswiper-ssr.spec.js
           browser: chrome
 
   e2e-chrome-nestjs-vue3-pinia:
@@ -769,8 +769,7 @@ jobs:
           start: pnpm example:nestjs:vue3:pinia
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/common-ssr.spec.js
-            e2e/integration/examples/vue-ssr.spec.js
+            e2e/integration/examples/noswiper-ssr.spec.js
           browser: chrome
 
   e2e-chrome-midway-vue3:
@@ -819,8 +818,7 @@ jobs:
           start: pnpm example:midway:vue3
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/common-ssr.spec.js
-            e2e/integration/examples/vue-ssr.spec.js
+            e2e/integration/examples/noswiper-ssr.spec.js
           browser: chrome
   e2e-chrome-nestjs-vue:
     if: ${{ !contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, '.md')}}
@@ -922,7 +920,7 @@ jobs:
           start: pnpm example:nestjs:react18
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/react18-ssr.spec.js
+            e2e/integration/examples/noswiper-ssr.spec.js
           browser: chrome
   e2e-chrome-nestjs-vue3:
     if: ${{ !contains(github.event.head_commit.message, 'skip ci') && !contains(github.event.head_commit.message, '.md')}}
