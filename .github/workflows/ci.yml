@@ -967,8 +967,7 @@ jobs:
           start: pnpm example:nestjs:vue3
           wait-on: 'http://localhost:3000'
           spec: |
-            e2e/integration/examples/common-ssr.spec.js
-            e2e/integration/examples/vue-ssr.spec.js
+            e2e/integration/examples/noswiper-ssr.spec.js
           browser: chrome
         env:
           ssrConfig: '{"whiteList":["ssr-common-utils"]}'
