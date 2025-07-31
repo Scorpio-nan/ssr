@@ -303,10 +303,10 @@ const manualChunksFn = (id: string) => {
 		}
 	}
 }
-
 const commonConfig = (_env: 'server' | 'client'): UserConfig => {
-	const { whiteList, alias, css, viteConfig, optimize, hmr } = loadConfig()
+	const { whiteList, alias, css, viteConfig, optimize, hmr, isDev } = loadConfig()
 	const framework = judgeFramework()
+	const isProdBuildingModeAndIsClient = _env === 'client' && framework === 'ssr-plugin-react' && !isDev
 	const lessOptions = css?.().loaderOptions?.less?.lessOptions ? css?.().loaderOptions?.less?.lessOptions : css?.().loaderOptions?.less
 	return {
 		root: cwd,
@@ -335,7 +335,7 @@ const commonConfig = (_env: 'server' | 'client'): UserConfig => {
 		resolve: {
 			alias: {
 				...alias,
-				...(_env === 'client' && framework === 'ssr-plugin-react'
+				...(isProdBuildingModeAndIsClient
 					? {
 							valtio: resolve(cwd, './node_modules/valtio')
 						}

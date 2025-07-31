@@ -127,9 +127,6 @@ importers:
       ssr-core:
         specifier: workspace:*
         version: link:../../packages/core
-      swiper:
-        specifier: 6.7.5
-        version: 6.7.5(typescript@5.8.3)
       valtio:
         specifier: ^1.13.2
         version: 1.13.2(@types/react@17.0.87)(react@17.0.2)
@@ -358,9 +355,6 @@ importers:
       ssr-hoc-vue3:
         specifier: workspace:*
         version: link:../../packages/hoc-vue3
-      swiper:
-        specifier: 6.7.5
-        version: 6.7.5(typescript@5.8.3)
       vue:
         specifier: ^3.0.0
         version: 3.5.18(typescript@5.8.3)
@@ -428,9 +422,6 @@ importers:
       ssr-core:
         specifier: workspace:*
         version: link:../../packages/core
-      swiper:
-        specifier: 6.7.5
-        version: 6.7.5(typescript@5.8.3)
       valtio:
         specifier: ^1.13.2
         version: 1.13.2(@types/react@17.0.87)(react@17.0.2)
@@ -440,7 +431,7 @@ importers:
         version: 1.9.4
       '@nestjs/cli':
         specifier: ^11.0.0
-        version: 11.0.8(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@4.0.3))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
+        version: 11.0.10(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@4.0.3))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
       '@types/react':
         specifier: ^17.0.0
         version: 17.0.87
@@ -510,7 +501,7 @@ importers:
         version: 1.9.4
       '@nestjs/cli':
         specifier: ^11.0.0
-        version: 11.0.8(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
+        version: 11.0.10(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
       '@types/react':
         specifier: ^17.0.0
         version: 17.0.87
@@ -586,7 +577,7 @@ importers:
         version: 1.9.4
       '@nestjs/cli':
         specifier: ^11.0.0
-        version: 11.0.8(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
+        version: 11.0.10(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
       ssr:
         specifier: workspace:*
         version: link:../../packages/cli
@@ -635,9 +626,6 @@ importers:
       ssr-hoc-vue3:
         specifier: workspace:*
         version: link:../../packages/hoc-vue3
-      swiper:
-        specifier: 6.7.5
-        version: 6.7.5(typescript@5.8.3)
       vue:
         specifier: ^3.0.0
         version: 3.5.18(typescript@5.8.3)
@@ -653,7 +641,7 @@ importers:
         version: 1.9.4
       '@nestjs/cli':
         specifier: ^11.0.0
-        version: 11.0.8(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
+        version: 11.0.10(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
       ssr:
         specifier: workspace:*
         version: link:../../packages/cli
@@ -705,9 +693,6 @@ importers:
       ssr-hoc-vue3:
         specifier: workspace:*
         version: link:../../packages/hoc-vue3
-      swiper:
-        specifier: 6.7.5
-        version: 6.7.5(typescript@5.8.3)
       vue:
         specifier: ^3.0.0
         version: 3.5.18(typescript@5.8.3)
@@ -723,7 +708,7 @@ importers:
         version: 1.9.4
       '@nestjs/cli':
         specifier: ^11.0.0
-        version: 11.0.8(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
+        version: 11.0.10(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)
       ssr:
         specifier: workspace:*
         version: link:../../packages/cli
@@ -1404,15 +1389,6 @@ packages:
       chokidar:
         optional: true
 
-  '@angular-devkit/core@19.2.6':
-    resolution: {integrity: sha512-WFgiYhrDMq83UNaGRAneIM7CYYdBozD+yYA9BjoU8AgBLKtrvn6S8ZcjKAk5heoHtY/u8pEb0mwDTz9gxFmJZQ==}
-    engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
-    peerDependencies:
-      chokidar: ^4.0.0
-    peerDependenciesMeta:
-      chokidar:
-        optional: true
-
   '@angular-devkit/schematics-cli@19.2.15':
     resolution: {integrity: sha512-1ESFmFGMpGQmalDB3t2EtmWDGv6gOFYBMxmHO2f1KI/UDl8UmZnCGL4mD3EWo8Hv0YIsZ9wOH9Q7ZHNYjeSpzg==}
     engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
@@ -1420,10 +1396,6 @@ packages:
 
   '@angular-devkit/schematics@19.2.15':
     resolution: {integrity: sha512-kNOJ+3vekJJCQKWihNmxBkarJzNW09kP5a9E1SRNiQVNOUEeSwcRR0qYotM65nx821gNzjjhJXnAZ8OazWldrg==}
-    engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
-
-  '@angular-devkit/schematics@19.2.6':
-    resolution: {integrity: sha512-YTAxNnT++5eflx19OUHmOWu597/TbTel+QARiZCv1xQw99+X8DCKKOUXtqBRd53CAHlREDI33Rn/JLY3NYgMLQ==}
     engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
 
   '@antfu/utils@0.7.10':
@@ -2502,8 +2474,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@inquirer/prompts@7.7.1':
-    resolution: {integrity: sha512-XDxPrEWeWUBy8scAXzXuFY45r/q49R0g72bUzgQXZ1DY/xEFX+ESDMkTQolcb5jRBzaNJX2W8XQl6krMNDTjaA==}
+  '@inquirer/prompts@7.8.0':
+    resolution: {integrity: sha512-JHwGbQ6wjf1dxxnalDYpZwZxUEosT+6CPGD9Zh4sm9WXdtUp9XODCQD3NjSTmu+0OAyxWXNOqf0spjIymJa2Tw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
@@ -2686,8 +2658,8 @@ packages:
   '@napi-rs/wasm-runtime@1.0.1':
     resolution: {integrity: sha512-KVlQ/jgywZpixGCKMNwxStmmbYEMyokZpCf2YuIChhfJA2uqfAKNEM8INz7zzTo55iEXfBhIIs3VqYyqzDLj8g==}
 
-  '@nestjs/cli@11.0.8':
-    resolution: {integrity: sha512-5AUtj+WE0yh0i8srKBYta/fl/Ji2xPP1R33U1RAtdQbwctj85zocfE2ioVWtGux1kN4FV+c8CPJayI9/phSHyA==}
+  '@nestjs/cli@11.0.10':
+    resolution: {integrity: sha512-4waDT0yGWANg0pKz4E47+nUrqIJv/UqrZ5wLPkCqc7oMGRMWKAaw1NDZ9rKsaqhqvxb2LfI5+uXOWr4yi94DOQ==}
     engines: {node: '>= 20.11'}
     hasBin: true
     peerDependencies:
@@ -2736,8 +2708,8 @@ packages:
       '@nestjs/common': ^11.0.0
       '@nestjs/core': ^11.0.0
 
-  '@nestjs/schematics@11.0.5':
-    resolution: {integrity: sha512-T50SCNyqCZ/fDssaOD7meBKLZ87ebRLaJqZTJPvJKjlib1VYhMOCwXYsr7bjMPmuPgiQHOwvppz77xN/m6GM7A==}
+  '@nestjs/schematics@11.0.7':
+    resolution: {integrity: sha512-t8dNYYMwEeEsrlwc2jbkfwCfXczq4AeNEgx1KVQuJ6wYibXk0ZbXbPdfp8scnEAaQv1grpncNV5gWgzi7ZwbvQ==}
     peerDependencies:
       typescript: '>=4.8.2'
 
@@ -4895,9 +4867,6 @@ packages:
   dom7@2.1.5:
     resolution: {integrity: sha512-xnhwVgyOh3eD++/XGtH+5qBwYTgCm0aW91GFgPJ3XG+jlsRLyJivnbP0QmUBFhI+Oaz9FV0s7cxgXHezwOEBYA==}
 
-  dom7@3.0.0:
-    resolution: {integrity: sha512-oNlcUdHsC4zb7Msx7JN3K0Nro1dzJ48knvBOnDPKJ2GV9wl1i5vydJZUSyOfrkKFDZEud/jBsTk92S/VGSAe/g==}
-
   domain-browser@1.2.0:
     resolution: {integrity: sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==}
     engines: {node: '>=0.4', npm: '>=1.2'}
@@ -4954,8 +4923,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.5.192:
-    resolution: {integrity: sha512-rP8Ez0w7UNw/9j5eSXCe10o1g/8B1P5SM90PCCMVkIRQn2R0LEHWz4Eh9RnxkniuDe1W0cTSOB3MLlkTGDcuCg==}
+  electron-to-chromium@1.5.193:
+    resolution: {integrity: sha512-eePuBZXM9OVCwfYUhd2OzESeNGnWmLyeu0XAEjf7xjijNjHFdeJSzuRUGN4ueT2tEYo5YqjHramKEFxz67p3XA==}
 
   elegant-spinner@1.0.1:
     resolution: {integrity: sha512-B+ZM+RXvRqQaAmkMlO/oSe5nMUOaUnyfGYCEHoR8wrXsZR2mA0XVibsxV1bvTwxdRWah1PkQqso2EzhILGHtEQ==}
@@ -5473,8 +5442,8 @@ packages:
   flush-write-stream@1.1.1:
     resolution: {integrity: sha512-3Z4XhFZ3992uIq0XOqb9AreonueSYphE6oYbpt5+3u06JWklbsPkNv3ZKkP9Bz/r+1MWCaMoSQ28P85+1Yc77w==}
 
-  follow-redirects@1.15.9:
-    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
+  follow-redirects@1.15.11:
+    resolution: {integrity: sha512-deG2P0JfjrTxl50XGCDyfI97ZGVCxIpfKYmfyrQ54n5FO/0gfIES8C/Psl6kWVDolizcaaxZJnTS0QSMxvnsBQ==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -8575,9 +8544,6 @@ packages:
   ssr-window@2.0.0:
     resolution: {integrity: sha512-NXzN+/HPObKAx191H3zKlYomE5WrVIkoCB5IaSdvKokxTpjBdWfr0RaP+1Z5KOfDT0ZVz+2tdtiBkhsEQ9p+0A==}
 
-  ssr-window@3.0.0:
-    resolution: {integrity: sha512-q+8UfWDg9Itrg0yWK7oe5p/XRCJpJF9OBtXfOPgSJl+u3Xd5KI328RUEvUqSMVM9CiQUEf1QdBzJMkYGErj9QA==}
-
   ssri@6.0.2:
     resolution: {integrity: sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==}
 
@@ -8751,10 +8717,6 @@ packages:
 
   swiper@5.4.5:
     resolution: {integrity: sha512-7QjA0XpdOmiMoClfaZ2lYN6ICHcMm72LXiY+NF4fQLFidigameaofvpjEEiTQuw3xm5eksG5hzkaRsjQX57vtA==}
-    engines: {node: '>= 4.7.0'}
-
-  swiper@6.7.5:
-    resolution: {integrity: sha512-KaTjO93tZyMpxWHaey+T+H/JeePMZV/joZWhZaor76Xk+rPGmjOz1S8mXSyrRkaW0p0LOJYeWGB8d0gYxSSV/Q==}
     engines: {node: '>= 4.7.0'}
 
   symbol-observable@1.2.0:
@@ -9040,8 +9002,8 @@ packages:
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  undici@7.12.0:
-    resolution: {integrity: sha512-GrKEsc3ughskmGA9jevVlIOPMiiAHJ4OFUtaAH+NhfTUSiZ1wMPIQqQvAJUrJspFXJt3EBWgpAeoHEDVT1IBug==}
+  undici@7.13.0:
+    resolution: {integrity: sha512-l+zSMssRqrzDcb3fjMkjjLGmuiiK2pMIcV++mJaAc9vhjSGpvM7h43QgP+OAMb1GImHmbPyG2tBXeuyG5iY4gA==}
     engines: {node: '>=20.18.1'}
 
   unicode-canonical-property-names-ecmascript@2.0.1:
@@ -9598,17 +9560,6 @@ snapshots:
     optionalDependencies:
       chokidar: 4.0.3
 
-  '@angular-devkit/core@19.2.6(chokidar@4.0.3)':
-    dependencies:
-      ajv: 8.17.1
-      ajv-formats: 3.0.1(ajv@8.17.1)
-      jsonc-parser: 3.3.1
-      picomatch: 4.0.2
-      rxjs: 7.8.1
-      source-map: 0.7.4
-    optionalDependencies:
-      chokidar: 4.0.3
-
   '@angular-devkit/schematics-cli@19.2.15(@types/node@18.19.121)(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/core': 19.2.15(chokidar@4.0.3)
@@ -9624,16 +9575,6 @@ snapshots:
   '@angular-devkit/schematics@19.2.15(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/core': 19.2.15(chokidar@4.0.3)
-      jsonc-parser: 3.3.1
-      magic-string: 0.30.17
-      ora: 5.4.1
-      rxjs: 7.8.1
-    transitivePeerDependencies:
-      - chokidar
-
-  '@angular-devkit/schematics@19.2.6(chokidar@4.0.3)':
-    dependencies:
-      '@angular-devkit/core': 19.2.6(chokidar@4.0.3)
       jsonc-parser: 3.3.1
       magic-string: 0.30.17
       ora: 5.4.1
@@ -10830,7 +10771,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 18.19.121
 
-  '@inquirer/prompts@7.7.1(@types/node@18.19.121)':
+  '@inquirer/prompts@7.8.0(@types/node@18.19.121)':
     dependencies:
       '@inquirer/checkbox': 4.2.0(@types/node@18.19.121)
       '@inquirer/confirm': 5.1.14(@types/node@18.19.121)
@@ -11128,13 +11069,13 @@ snapshots:
       '@tybys/wasm-util': 0.10.0
     optional: true
 
-  '@nestjs/cli@11.0.8(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)':
+  '@nestjs/cli@11.0.10(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@3.6.0))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)':
     dependencies:
       '@angular-devkit/core': 19.2.15(chokidar@4.0.3)
       '@angular-devkit/schematics': 19.2.15(chokidar@4.0.3)
       '@angular-devkit/schematics-cli': 19.2.15(@types/node@18.19.121)(chokidar@4.0.3)
-      '@inquirer/prompts': 7.7.1(@types/node@18.19.121)
-      '@nestjs/schematics': 11.0.5(chokidar@4.0.3)(typescript@5.8.3)
+      '@inquirer/prompts': 7.8.0(@types/node@18.19.121)
+      '@nestjs/schematics': 11.0.7(chokidar@4.0.3)(typescript@5.8.3)
       ansis: 4.1.0
       chokidar: 4.0.3
       cli-table3: 0.6.5
@@ -11158,13 +11099,13 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  '@nestjs/cli@11.0.8(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@4.0.3))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)':
+  '@nestjs/cli@11.0.10(@swc/cli@0.1.65(@swc/core@1.13.3)(chokidar@4.0.3))(@swc/core@1.13.3)(@types/node@18.19.121)(esbuild@0.14.48)':
     dependencies:
       '@angular-devkit/core': 19.2.15(chokidar@4.0.3)
       '@angular-devkit/schematics': 19.2.15(chokidar@4.0.3)
       '@angular-devkit/schematics-cli': 19.2.15(@types/node@18.19.121)(chokidar@4.0.3)
-      '@inquirer/prompts': 7.7.1(@types/node@18.19.121)
-      '@nestjs/schematics': 11.0.5(chokidar@4.0.3)(typescript@5.8.3)
+      '@inquirer/prompts': 7.8.0(@types/node@18.19.121)
+      '@nestjs/schematics': 11.0.7(chokidar@4.0.3)(typescript@5.8.3)
       ansis: 4.1.0
       chokidar: 4.0.3
       cli-table3: 0.6.5
@@ -11228,10 +11169,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nestjs/schematics@11.0.5(chokidar@4.0.3)(typescript@5.8.3)':
+  '@nestjs/schematics@11.0.7(chokidar@4.0.3)(typescript@5.8.3)':
     dependencies:
-      '@angular-devkit/core': 19.2.6(chokidar@4.0.3)
-      '@angular-devkit/schematics': 19.2.6(chokidar@4.0.3)
+      '@angular-devkit/core': 19.2.15(chokidar@4.0.3)
+      '@angular-devkit/schematics': 19.2.15(chokidar@4.0.3)
       comment-json: 4.2.5
       jsonc-parser: 3.3.1
       pluralize: 8.0.0
@@ -12356,7 +12297,7 @@ snapshots:
 
   axios@1.11.0:
     dependencies:
-      follow-redirects: 1.15.9(debug@4.4.1(supports-color@6.1.0))
+      follow-redirects: 1.15.11(debug@4.4.1(supports-color@6.1.0))
       form-data: 4.0.4
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -12364,7 +12305,7 @@ snapshots:
 
   axios@1.11.0(debug@4.4.1):
     dependencies:
-      follow-redirects: 1.15.9(debug@4.4.1)
+      follow-redirects: 1.15.11(debug@4.4.1)
       form-data: 4.0.4
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -12660,7 +12601,7 @@ snapshots:
   browserslist@4.25.1:
     dependencies:
       caniuse-lite: 1.0.30001731
-      electron-to-chromium: 1.5.192
+      electron-to-chromium: 1.5.193
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.1)
 
@@ -12884,7 +12825,7 @@ snapshots:
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
-      undici: 7.12.0
+      undici: 7.13.0
       whatwg-mimetype: 4.0.0
 
   chokidar@2.1.8:
@@ -13785,10 +13726,6 @@ snapshots:
     dependencies:
       ssr-window: 2.0.0
 
-  dom7@3.0.0:
-    dependencies:
-      ssr-window: 3.0.0
-
   domain-browser@1.2.0: {}
 
   domelementtype@2.3.0: {}
@@ -13852,7 +13789,7 @@ snapshots:
     dependencies:
       jake: 10.9.2
 
-  electron-to-chromium@1.5.192: {}
+  electron-to-chromium@1.5.193: {}
 
   elegant-spinner@1.0.1: {}
 
@@ -14554,11 +14491,11 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 2.3.8
 
-  follow-redirects@1.15.9(debug@4.4.1(supports-color@6.1.0)):
+  follow-redirects@1.15.11(debug@4.4.1(supports-color@6.1.0)):
     optionalDependencies:
       debug: 4.4.1(supports-color@6.1.0)
 
-  follow-redirects@1.15.9(debug@4.4.1):
+  follow-redirects@1.15.11(debug@4.4.1):
     optionalDependencies:
       debug: 4.4.1(supports-color@6.1.0)
 
@@ -15031,7 +14968,7 @@ snapshots:
   http-proxy@1.18.1(debug@4.4.1(supports-color@6.1.0)):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.9(debug@4.4.1(supports-color@6.1.0))
+      follow-redirects: 1.15.11(debug@4.4.1(supports-color@6.1.0))
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -15039,7 +14976,7 @@ snapshots:
   http-proxy@1.18.1(debug@4.4.1):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.9(debug@4.4.1)
+      follow-redirects: 1.15.11(debug@4.4.1)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -18013,8 +17950,6 @@ snapshots:
 
   ssr-window@2.0.0: {}
 
-  ssr-window@3.0.0: {}
-
   ssri@6.0.2:
     dependencies:
       figgy-pudding: 3.5.2
@@ -18208,14 +18143,6 @@ snapshots:
       dom7: 2.1.5
       ssr-window: 2.0.0
       vue: 2.7.16
-
-  swiper@6.7.5(typescript@5.8.3):
-    dependencies:
-      dom7: 3.0.0
-      ssr-window: 3.0.0
-      vue: 3.5.18(typescript@5.8.3)
-    transitivePeerDependencies:
-      - typescript
 
   symbol-observable@1.2.0: {}
 
@@ -18520,7 +18447,7 @@ snapshots:
 
   undici-types@5.26.5: {}
 
-  undici@7.12.0: {}
+  undici@7.13.0: {}
 
   unicode-canonical-property-names-ecmascript@2.0.1: {}
 
